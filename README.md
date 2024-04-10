@@ -10,13 +10,13 @@
 
 Стек:
   VPS Сервер:
-    -- Apache2
-    -- openvpn
+     Apache2
+     openvpn
 
 Локальный сервер:
-    -- Apache2 + wsgi + flask
-    -- python3 
-    -- openvpn
+     Apache2 + wsgi + flask
+     python3 
+     openvpn
 
 
 
