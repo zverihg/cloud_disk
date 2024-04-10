@@ -1,12 +1,31 @@
 # cloud_disk
 
-This project is designed to store personal information and access it using a local server at home or in the country.
-This approach is highly secure since all data is transmitted over a secure VPN channel.
-A User Interface has been created for viewing and manipulating data.
-The project contains the sources of the cloud service for communication between the Client and the server with data, as well as the sources of the server itself with data.
+Проект для облачного хранилища.
+Прелесть данного проекта в том что используется VPN тонель позволяющий протянуть связь между самим хранилищем и клиентом через сервер с белым IP.
 
-Was used
-Apache
-mod wsgi Flask
-Jquery
-open vpn
+Нам понадобится.
+  -- Любой пк с установленным Linux. (Далее локальный сервер)
+  -- VPS сервер с белым IP.
+  -- Клиентское устройство. Телефон, комп и тд.
+
+Стек:
+  VPS Сервер:
+    -- Apache2
+    -- openvpn
+
+Локальный сервер:
+    -- Apache2 + wsgi + flask
+    -- python3 
+    -- openvpn
+
+
+
+Первое, что необходимо это настроить apache2 openvpn и firewalld на VPS сервере. 
+В openvpn необходимо создать клиента. (Инструкций в интернете навалом)
+В apache2 надо настроить прокси на клиента. (Инструкций в интернете навалом)
+В firewalld открываем порты 22 (для ssh, но желательно его перенести на другой порт), 80 и 443 (под домен если надо)
+
+
+
+
+После настройки преносим проект на локальный сервер и настраиваем wsgi.
